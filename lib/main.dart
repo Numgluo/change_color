@@ -6,11 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-//googleplayStoreに登録する。そして、広告を付ける。クリック型の広告が望ましいかな？アドネットワークに登録するらしい。
-//2022/12/04 ぎり公開までいけてない。プライバシーポリシーを設定する必要があるので、githubpagesでプライバシーポリシーを作成する。
-//すぐ下のSystemCromeは変えた方がいいいよ。たぶん
-//githubに専用のページを作る。
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
@@ -29,7 +24,7 @@ class config extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360,712),
+      designSize: Size(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height),
       minTextAdapt:true,
       splitScreenMode:true,
       builder: (context, child) {
@@ -50,13 +45,12 @@ class StartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
-
     
     return Scaffold(
       appBar: AppBar(
-        title:const Text("Change Color!",
+        title:Text("Change Color!",
           style: TextStyle(
-            fontSize: 32,
+            fontSize: 32.sp,
           ),
         ),
         titleSpacing: ScreenUtil().setHeight(40),
@@ -69,10 +63,8 @@ class StartPage extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child:Padding(
-                    padding: EdgeInsets.symmetric(vertical: _height * 0.05,horizontal: _height * 0.05),
+                    padding: EdgeInsets.symmetric(vertical: _height * 0.1, horizontal: _height * 0.1),
                     child:SizedBox(
-                      height: _height * 0.1,
-                      width:  _width * 0.4,
                       child:ElevatedButton(          //Display画面に遷移
                         child: Text('TEMPLATE',
                           style: TextStyle(
@@ -92,12 +84,10 @@ class StartPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
+               Expanded(
                   child:Padding(
-                    padding: EdgeInsets.symmetric(vertical: _height * 0.05,horizontal: _height * 0.05),
+                    padding: EdgeInsets.symmetric(vertical: _height * 0.1,horizontal: _width * 0.1),
                     child:SizedBox(
-                      height: _height * 0.1,
-                      width: _width * 0.4,
                       child:ElevatedButton(
                         child: Column(
                           mainAxisAlignment:MainAxisAlignment.center,

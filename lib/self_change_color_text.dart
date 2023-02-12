@@ -22,7 +22,7 @@ final currentOpacityValue = StateProvider((ref){
 class SelfonText extends ConsumerWidget{
 
   final snackBarInt = const SnackBar(
-    content: Text('the range is [0 <= x <= 255], please review your input. Example 123'),
+    content: Text('the range is [0 <= x <= 255], please review your inputs. Example 123'),
   );
   
   final snackBarDouble = const SnackBar(
@@ -240,7 +240,7 @@ class SelfonText extends ConsumerWidget{
     return true;
   }
 
-  //opacityが数値であるか どうかを判定する。
+  //opacityがnullであるか どうかを判定する。
   bool boolNullDouble(String y){
     if(double.tryParse(y) == null){
       return false;
