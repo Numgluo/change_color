@@ -185,7 +185,6 @@ class SelfChangeColor extends ConsumerWidget{
                   ],     
                 ),
 
-
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: _height * 0.05,horizontal: _width * 0.1),
                   child:Container(
@@ -202,9 +201,8 @@ class SelfChangeColor extends ConsumerWidget{
                   mainAxisAlignment:MainAxisAlignment.center,
                   children:[
                     Padding(
-                      padding: EdgeInsets.only(right: _width * 0.2),
+                      padding: EdgeInsets.only(right:_width * 0.2),
                       child:SizedBox(
-                        width: _width * 0.25,
                         child:ElevatedButton(
                           onPressed: (){
                             Navigator.of(context).push(
@@ -216,14 +214,13 @@ class SelfChangeColor extends ConsumerWidget{
                           },
                           child: Text('Display',
                             style: TextStyle(
-                              fontSize: ScreenUtil().setSp(16),
+                              fontSize: ScreenUtil().setSp(32),
                             ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: _width * 0.25,
                       child:ElevatedButton(
                         onPressed: (){
                           Navigator.of(context).push(
@@ -234,7 +231,7 @@ class SelfChangeColor extends ConsumerWidget{
                         },
                         child: Text('text',
                           style: TextStyle(
-                            fontSize: ScreenUtil().setSp(16)
+                            fontSize: ScreenUtil().setSp(32)
                           ),
                         ),
                       ),        

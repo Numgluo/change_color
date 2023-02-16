@@ -61,24 +61,27 @@ class SelfonText extends ConsumerWidget{
                   ),
                 ],
               ),
-              TextField(
-                textAlign:TextAlign.center,
-                keyboardType: TextInputType.number,
-                maxLength: 3,
-                inputFormatters:[
-                  FilteringTextInputFormatter.digitsOnly,
-                ],
-                decoration: const InputDecoration(
-                  hintText:  '0 <= x <= 255',
+              SizedBox(
+                width:_width * 0.8,
+                child:TextField(
+                  textAlign:TextAlign.center,
+                  keyboardType: TextInputType.number,
+                  maxLength: 3,
+                  inputFormatters:[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  decoration: const InputDecoration(
+                    hintText:  '0 <= x <= 255',
+                  ),
+                  style: const TextStyle(color: Colors.red),
+                  obscureText: false,
+                  maxLines:1 ,
+                  onChanged: (String r){
+
+                    ref.read(currentRedValue.notifier).state = r;
+
+                  },
                 ),
-                style: const TextStyle(color: Colors.red),
-                obscureText: false,
-                maxLines:1 ,
-                onChanged: (String r){
-                  
-                  ref.read(currentRedValue.notifier).state = r;
-                  
-                },
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -96,24 +99,27 @@ class SelfonText extends ConsumerWidget{
                   ),
                 ],
               ),
-              TextField(
-                textAlign:TextAlign.center,
-                keyboardType: TextInputType.number,
-                maxLength: 3,
-                inputFormatters:[
-                  FilteringTextInputFormatter.digitsOnly,
-                ],
-                decoration: const InputDecoration(
-                  hintText:  '0 <= x <= 255',
-                ),
-                style: const TextStyle(color: Colors.green),
-                obscureText: false,
-                maxLines:1 ,
-                onChanged: (String g){
-                  
-                    ref.read(currentGreenValue.notifier).state = g;
-                  
-                },
+              SizedBox(
+                width:_width * 0.8,
+                child:TextField(
+                  textAlign:TextAlign.center,
+                  keyboardType: TextInputType.number,
+                  maxLength: 3,
+                  inputFormatters:[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  decoration: const InputDecoration(
+                    hintText:  '0 <= x <= 255',
+                  ),
+                  style: const TextStyle(color: Colors.green),
+                  obscureText: false,
+                  maxLines:1 ,
+                  onChanged: (String g){
+
+                      ref.read(currentGreenValue.notifier).state = g;
+
+                  },
+              ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -131,24 +137,27 @@ class SelfonText extends ConsumerWidget{
                   ),
                 ]
               ),
-              TextField(
-                textAlign:TextAlign.center,
-                keyboardType: TextInputType.number,
-                maxLength: 3,
-                inputFormatters:[
-                  FilteringTextInputFormatter.digitsOnly,
-                ],
-                decoration: const InputDecoration(
-                  hintText:  '0 <= x <= 255',
+              SizedBox(
+                width:_width * 0.8,
+                child:TextField(
+                  textAlign:TextAlign.center,
+                  keyboardType: TextInputType.number,
+                  maxLength: 3,
+                  inputFormatters:[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
+                  decoration: const InputDecoration(
+                    hintText:  '0 <= x <= 255',
+                  ),
+                  style: const TextStyle(color: Colors.blue),
+                  obscureText: false,
+                  maxLines:1 ,
+                  onChanged: (String b){
+
+                      ref.read(currentBlueValue.notifier).state = b;  
+
+                  },
                 ),
-                style: const TextStyle(color: Colors.blue),
-                obscureText: false,
-                maxLines:1 ,
-                onChanged: (String b){
-                  
-                    ref.read(currentBlueValue.notifier).state = b;  
-                
-                },
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -166,21 +175,27 @@ class SelfonText extends ConsumerWidget{
                   ),
                 ],
               ),
-              TextField(
-                textAlign:TextAlign.center,
-                maxLength: 4,
-                keyboardType: const TextInputType.numberWithOptions(signed:true, decimal: true ),
-                decoration: const InputDecoration(
-                  hintText:  '0.0 < x <= 1.0',
+              SizedBox(
+                width:_width * 0.8,
+                child:TextField(
+                  textAlign:TextAlign.center,
+                  maxLength: 4,
+                  keyboardType: const TextInputType.numberWithOptions(signed:true, decimal: true ),
+                  decoration: const InputDecoration(
+                    hintText:  '0.0 < x <= 1.0',
+                  ),
+                  style: const TextStyle(color: Colors.black),
+                  obscureText: false,
+                  maxLines:1 ,
+                  onChanged: (String o){
+
+                      ref.read(currentOpacityValue.notifier).state = o;
+
+                  },
                 ),
-                style: const TextStyle(color: Colors.black),
-                obscureText: false,
-                maxLines:1 ,
-                onChanged: (String o){
-                  
-                    ref.read(currentOpacityValue.notifier).state = o;
-                
-                },
+              ),
+              SizedBox(
+                height:_height * 0.01
               ),
               Container(         
                 color: boolNullDouble(changeOpacityValue)&&boolNullInt(changeRedValue, changeGreenValue, changeBlueValue)
@@ -191,34 +206,52 @@ class SelfonText extends ConsumerWidget{
                     0,0,0,1,
                   ),
                 child:SizedBox(
-                  height: (_height * 0.16).h,
-                  width:double.infinity,
+                  height: _height * 0.16,
+                  width: _width * 0.8,  
                 )
               ),
-              Padding(
-                padding: EdgeInsets.only(top: _height * 0.02),
-                child:SizedBox(
-                  height: _height * 0.1,
-                  width: _width * 0.3,
-                  child:ElevatedButton(
-                    onPressed: (){
-                      if(errorLog(context,changeRedValue, changeGreenValue, changeBlueValue, changeOpacityValue)){
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context){
-                            return Display(int.parse(changeRedValue), int.parse(changeGreenValue), int.parse(changeBlueValue), double.parse(changeOpacityValue));
-                            }
-                          )
-                        );
-                      }
-                    },
-                    child: Text("Display",
-                      style: TextStyle(
-                        fontSize:ScreenUtil().setSp(18),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+                  Padding(
+                    padding: EdgeInsets.only(right:_width * 0.2),
+                    child:SizedBox(
+                      child:ElevatedButton(
+                        onPressed: (){
+                            Navigator.of(context).pop();
+                          },
+                        child: Text("back",
+                          style: TextStyle(
+                            fontSize:ScreenUtil().setSp(32),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: _height * 0.05),
+                    child:SizedBox(
+                      child:ElevatedButton(
+                        onPressed: (){
+                          if(errorLog(context,changeRedValue, changeGreenValue, changeBlueValue, changeOpacityValue)){
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context){
+                                return Display(int.parse(changeRedValue), int.parse(changeGreenValue), int.parse(changeBlueValue), double.parse(changeOpacityValue));
+                                }
+                              )
+                            );
+                          }
+                        },
+                        child: Text("Display",
+                          style: TextStyle(
+                            fontSize:ScreenUtil().setSp(32),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]
+              )
             ],
           ),
           ),
