@@ -4,7 +4,6 @@ import 'package:change_color/display.dart';
 import 'package:change_color/self_change_color_text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:change_color/model/main_model.dart';
 
 
 final currentRedValue = StateProvider((ref){
@@ -184,8 +183,6 @@ class SelfChangeColor extends ConsumerWidget{
                     ),                
                   ],     
                 ),
-
-
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: _height * 0.05,horizontal: _width * 0.1),
                   child:Container(
@@ -204,7 +201,8 @@ class SelfChangeColor extends ConsumerWidget{
                     Padding(
                       padding: EdgeInsets.only(right: _width * 0.2),
                       child:SizedBox(
-                        width: _width * 0.25,
+                        height: _height * 0.07,
+                        width: _width * 0.3,
                         child:ElevatedButton(
                           onPressed: (){
                             Navigator.of(context).push(
@@ -216,14 +214,15 @@ class SelfChangeColor extends ConsumerWidget{
                           },
                           child: Text('Display',
                             style: TextStyle(
-                              fontSize: ScreenUtil().setSp(16),
+                              fontSize: 25.sp,
                             ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: _width * 0.25,
+                      height: _height * 0.07,
+                      width: _width * 0.3,
                       child:ElevatedButton(
                         onPressed: (){
                           Navigator.of(context).push(
@@ -234,7 +233,7 @@ class SelfChangeColor extends ConsumerWidget{
                         },
                         child: Text('text',
                           style: TextStyle(
-                            fontSize: ScreenUtil().setSp(16)
+                            fontSize: ScreenUtil().setSp(25)
                           ),
                         ),
                       ),        

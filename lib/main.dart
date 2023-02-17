@@ -29,6 +29,7 @@ class config extends StatelessWidget{
       splitScreenMode:true,
       builder: (context, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: child,
         );
       },
@@ -65,6 +66,7 @@ class StartPage extends StatelessWidget {
                   child:Padding(
                     padding: EdgeInsets.symmetric(vertical: _height * 0.1, horizontal: _height * 0.1),
                     child:SizedBox(
+                      width: _width * 0.5,
                       child:ElevatedButton(          //Display画面に遷移
                         child: Text('TEMPLATE',
                           style: TextStyle(
@@ -88,6 +90,7 @@ class StartPage extends StatelessWidget {
                   child:Padding(
                     padding: EdgeInsets.symmetric(vertical: _height * 0.1,horizontal: _width * 0.1),
                     child:SizedBox(
+                      width: (_width * 0.5).w,
                       child:ElevatedButton(
                         child: Column(
                           mainAxisAlignment:MainAxisAlignment.center,
