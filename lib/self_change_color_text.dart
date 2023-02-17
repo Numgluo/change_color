@@ -62,8 +62,12 @@ class SelfonText extends ConsumerWidget{
                 ],
               ),
               SizedBox(
+<<<<<<< HEAD
                 height: (_height * 0.1).h,
                 width: (_width * 0.8).w,
+=======
+                width:_width * 0.8,
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                 child:TextField(
                   textAlign:TextAlign.center,
                   keyboardType: TextInputType.number,
@@ -78,9 +82,15 @@ class SelfonText extends ConsumerWidget{
                   obscureText: false,
                   maxLines:1 ,
                   onChanged: (String r){
+<<<<<<< HEAD
                   
                     ref.read(currentRedValue.notifier).state = r;
                   
+=======
+
+                    ref.read(currentRedValue.notifier).state = r;
+
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                   },
                 ),
               ),
@@ -101,8 +111,12 @@ class SelfonText extends ConsumerWidget{
                 ],
               ),
               SizedBox(
+<<<<<<< HEAD
                 height: (_height * 0.1).h,
                 width: (_width * 0.8).w,
+=======
+                width:_width * 0.8,
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                 child:TextField(
                   textAlign:TextAlign.center,
                   keyboardType: TextInputType.number,
@@ -118,9 +132,16 @@ class SelfonText extends ConsumerWidget{
                   maxLines:1 ,
                   onChanged: (String g){
 
+<<<<<<< HEAD
                     ref.read(currentGreenValue.notifier).state = g;
                     },
                 ),
+=======
+                      ref.read(currentGreenValue.notifier).state = g;
+
+                  },
+              ),
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -139,8 +160,12 @@ class SelfonText extends ConsumerWidget{
                 ]
               ),
               SizedBox(
+<<<<<<< HEAD
                 height: _height * 0.1,
                 width: _width * 0.8,
+=======
+                width:_width * 0.8,
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                 child:TextField(
                   textAlign:TextAlign.center,
                   keyboardType: TextInputType.number,
@@ -155,9 +180,15 @@ class SelfonText extends ConsumerWidget{
                   obscureText: false,
                   maxLines:1 ,
                   onChanged: (String b){
+<<<<<<< HEAD
                   
                     ref.read(currentBlueValue.notifier).state = b;  
                 
+=======
+
+                      ref.read(currentBlueValue.notifier).state = b;  
+
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                   },
                 ),
               ),
@@ -178,8 +209,12 @@ class SelfonText extends ConsumerWidget{
                 ],
               ),
               SizedBox(
+<<<<<<< HEAD
                 height: _height * 0.1,
                 width: _width * 0.8,
+=======
+                width:_width * 0.8,
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                 child:TextField(
                   textAlign:TextAlign.center,
                   maxLength: 4,
@@ -191,11 +226,22 @@ class SelfonText extends ConsumerWidget{
                   obscureText: false,
                   maxLines:1 ,
                   onChanged: (String o){
+<<<<<<< HEAD
                   
                     ref.read(currentOpacityValue.notifier).state = o;
                 
                   },
                 ),
+=======
+
+                      ref.read(currentOpacityValue.notifier).state = o;
+
+                  },
+                ),
+              ),
+              SizedBox(
+                height:_height * 0.01
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
               ),
               Container(         
                 color: boolNullDouble(changeOpacityValue)&&boolNullInt(changeRedValue, changeGreenValue, changeBlueValue)
@@ -206,13 +252,19 @@ class SelfonText extends ConsumerWidget{
                     0,0,0,1,
                   ),
                 child:SizedBox(
+<<<<<<< HEAD
                   height: _height * 0.2,
                   width: _width * 0.8,
+=======
+                  height: _height * 0.16,
+                  width: _width * 0.8,  
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                 )
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:[
+<<<<<<< HEAD
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, _height * 0.05,  _width * 0.2,0),
                       child:SizedBox(
@@ -225,12 +277,25 @@ class SelfonText extends ConsumerWidget{
                         child: Text("back",
                           style: TextStyle(
                             fontSize:ScreenUtil().setSp(25),
+=======
+                  Padding(
+                    padding: EdgeInsets.only(right:_width * 0.2),
+                    child:SizedBox(
+                      child:ElevatedButton(
+                        onPressed: (){
+                            Navigator.of(context).pop();
+                          },
+                        child: Text("back",
+                          style: TextStyle(
+                            fontSize:ScreenUtil().setSp(32),
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                           ),
                         ),
                       ),
                     ),
                   ),
                   Padding(
+<<<<<<< HEAD
                     padding: EdgeInsets.only(top: _height * 0.05),
                     child:SizedBox(
                       height: _height * 0.07,
@@ -249,13 +314,37 @@ class SelfonText extends ConsumerWidget{
                       child: Text("Display",
                         style: TextStyle(
                           fontSize:ScreenUtil().setSp(25),
+=======
+                    padding: EdgeInsets.symmetric(vertical: _height * 0.05),
+                    child:SizedBox(
+                      child:ElevatedButton(
+                        onPressed: (){
+                          if(errorLog(context,changeRedValue, changeGreenValue, changeBlueValue, changeOpacityValue)){
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context){
+                                return Display(int.parse(changeRedValue), int.parse(changeGreenValue), int.parse(changeBlueValue), double.parse(changeOpacityValue));
+                                }
+                              )
+                            );
+                          }
+                        },
+                        child: Text("Display",
+                          style: TextStyle(
+                            fontSize:ScreenUtil().setSp(32),
+                          ),
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                         ),
                       ),
                     ),
                   ),
+<<<<<<< HEAD
                   )
                 ],
               ),
+=======
+                ]
+              )
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
             ],
           ),
           ),

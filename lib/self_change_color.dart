@@ -183,6 +183,10 @@ class SelfChangeColor extends ConsumerWidget{
                     ),                
                   ],     
                 ),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: _height * 0.05,horizontal: _width * 0.1),
                   child:Container(
@@ -199,10 +203,13 @@ class SelfChangeColor extends ConsumerWidget{
                   mainAxisAlignment:MainAxisAlignment.center,
                   children:[
                     Padding(
-                      padding: EdgeInsets.only(right: _width * 0.2),
+                      padding: EdgeInsets.only(right:_width * 0.2),
                       child:SizedBox(
+<<<<<<< HEAD
                         height: _height * 0.07,
                         width: _width * 0.3,
+=======
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                         child:ElevatedButton(
                           onPressed: (){
                             Navigator.of(context).push(
@@ -214,15 +221,22 @@ class SelfChangeColor extends ConsumerWidget{
                           },
                           child: Text('Display',
                             style: TextStyle(
+<<<<<<< HEAD
                               fontSize: 25.sp,
+=======
+                              fontSize: ScreenUtil().setSp(32),
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                             ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(
+<<<<<<< HEAD
                       height: _height * 0.07,
                       width: _width * 0.3,
+=======
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                       child:ElevatedButton(
                         onPressed: (){
                           Navigator.of(context).push(
@@ -233,7 +247,11 @@ class SelfChangeColor extends ConsumerWidget{
                         },
                         child: Text('text',
                           style: TextStyle(
+<<<<<<< HEAD
                             fontSize: ScreenUtil().setSp(25)
+=======
+                            fontSize: ScreenUtil().setSp(32)
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                           ),
                         ),
                       ),        

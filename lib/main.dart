@@ -22,7 +22,7 @@ void main() {
 
 class config extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return ScreenUtilInit(
       designSize: Size(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height),
       minTextAdapt:true,
@@ -35,13 +35,10 @@ class config extends StatelessWidget{
       },
       child: StartPage()
       );
-
   }
-
 }
 
 class StartPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
@@ -65,8 +62,11 @@ class StartPage extends StatelessWidget {
                 Expanded(
                   child:Padding(
                     padding: EdgeInsets.symmetric(vertical: _height * 0.1, horizontal: _height * 0.1),
+<<<<<<< HEAD
                     child:SizedBox(
                       width: _width * 0.5,
+=======
+>>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
                       child:ElevatedButton(          //Display画面に遷移
                         child: Text('TEMPLATE',
                           style: TextStyle(
@@ -83,7 +83,6 @@ class StartPage extends StatelessWidget {
                           );
                         }, 
                       ),
-                    ),
                   ),
                 ),
                Expanded(
@@ -97,12 +96,12 @@ class StartPage extends StatelessWidget {
                           children:[
                             Text('SET',
                               style: TextStyle(
-                                fontSize: 48.sp
+                                fontSize: 36.sp
                               ),
                             ),
                             Text('COLOR',
                               style: TextStyle(
-                                fontSize: 48.sp
+                                fontSize: 36.sp
                               ),
                             ),
                           ]
