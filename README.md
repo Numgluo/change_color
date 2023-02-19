@@ -2,6 +2,7 @@
 
 You can change your display's color!
 this is my firstApp made by flutter.
+You can change screen color, it like a soccer yellow card.
 
 # usage
 
