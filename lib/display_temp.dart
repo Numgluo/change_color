@@ -10,9 +10,9 @@ class DisplayTemp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Container(
-        color: color,
-      )
+        body:Container(
+          color: color,
+        )
     );
     
   }

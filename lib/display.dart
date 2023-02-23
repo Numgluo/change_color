@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 class Display extends StatelessWidget{
 
-   Display(this.r, this.g, this.b,this._opacity);
+  Display(this.r, this.g, this.b,this._opacity);
 
-  
   int r;
   int g;
   int b;
@@ -18,5 +17,4 @@ class Display extends StatelessWidget{
       ),
     );
   }
-
 }

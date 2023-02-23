@@ -26,33 +26,34 @@ class templatePage extends StatelessWidget{
       colorBuilder(context,Colors.deepPurple),
       colorBuilder(context,Colors.indigo),
       colorBuilder(context,Colors.cyanAccent),
-      ];
-    return MaterialApp( 
-      home:Scaffold(
-        body:GridView.count(
-          crossAxisCount: 2,
-          mainAxisSpacing: 10.0,
-          crossAxisSpacing: 10.0,
-          children: list,
-        ),
+    ];
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home:Scaffold(
+          body:GridView.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 10.0,
+            crossAxisSpacing: 10.0,
+            children: list,
+          ),
 
-      )
+        )
     );
   }
 
   Widget colorBuilder(BuildContext context,Color _color){
     return 
-        Container(
+      Container(
           color: _color,
           child:GestureDetector(
             onTap:() {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context){
-                  return DisplayTemp(color: _color,);
-                })
+                  MaterialPageRoute(builder: (context){
+                    return DisplayTemp(color: _color,);
+                  })
               );
             },
           )
-        );
+      );
   }
 }

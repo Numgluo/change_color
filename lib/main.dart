@@ -8,15 +8,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
-    SystemUiOverlay.bottom
-  ]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+
   runApp(
-    ProviderScope(
-      child: MaterialApp(
-        home:config()
+      ProviderScope(
+          child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              home:config()
+          )
       )
-    )
   );
 }
 
@@ -24,17 +24,17 @@ class config extends StatelessWidget{
   @override
   Widget build(BuildContext context) { 
     return ScreenUtilInit(
-      designSize: Size(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height),
-      minTextAdapt:true,
-      splitScreenMode:true,
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: child,
-        );
-      },
-      child: StartPage()
-      );
+        designSize: Size(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height),
+        minTextAdapt:true,
+        splitScreenMode:true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: child,
+          );
+        },
+        child: StartPage()
+    );
   }
 }
 
@@ -56,71 +56,69 @@ class StartPage extends StatelessWidget {
       ),
       body: Center(
         child:SafeArea(
-            child:Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                  child:Padding(
-                    padding: EdgeInsets.symmetric(vertical: _height * 0.1, horizontal: _height * 0.1),
-<<<<<<< HEAD
-                    child:SizedBox(
-                      width: _width * 0.5,
-=======
->>>>>>> 1f260bfa45bb7b53a4597892985e86cdbfc2d329
-                      child:ElevatedButton(          //Display画面に遷移
-                        child: Text('TEMPLATE',
-                          style: TextStyle(
-                            fontSize: 32.sp
-                          ),
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                child:Padding(
+                  padding: EdgeInsets.symmetric(vertical: _height * 0.1, horizontal: _width * 0.1),
+                  child:SizedBox(
+                    width: (_width * 0.5).w,
+                    child:ElevatedButton(          //Display画面に遷移
+                      child: Text('TEMPLATE',
+                        style: TextStyle(
+                          fontSize: 25.sp,
                         ),
-                        onPressed: (){
-                          Navigator.push(context, 
-                            MaterialPageRoute(
-                              builder: (context){
-                                return templatePage();
-                              },  
-                            ),
-                          );
-                        }, 
                       ),
+                      onPressed: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context){
+                              return templatePage();
+                            },
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
-               Expanded(
-                  child:Padding(
-                    padding: EdgeInsets.symmetric(vertical: _height * 0.1,horizontal: _width * 0.1),
-                    child:SizedBox(
-                      width: (_width * 0.5).w,
-                      child:ElevatedButton(
-                        child: Column(
+              ),
+              Expanded(
+                child:Padding(
+                  padding: EdgeInsets.symmetric(vertical: _height * 0.1,horizontal: _width * 0.1),
+                  child:SizedBox(
+                    width: (_width * 0.5).w,
+                    child:ElevatedButton(
+                      child: Column(
                           mainAxisAlignment:MainAxisAlignment.center,
                           children:[
                             Text('SET',
                               style: TextStyle(
-                                fontSize: 36.sp
+                                  fontSize: 36.sp
                               ),
                             ),
                             Text('COLOR',
                               style: TextStyle(
-                                fontSize: 36.sp
+                                  fontSize: 36.sp
                               ),
                             ),
                           ]
-                        ),
-                        onPressed: (){
-                          Navigator.of(context).push(
+                      ),
+                      onPressed: (){
+                        Navigator.of(context).push(
                             MaterialPageRoute(builder: (context){
                               return SelfChangeColor();
                             })
-                          );
-                        }, 
-                      ),
-                    ), 
+                        );
+                      },
+                    ),
                   ),
                 ),
-              ],            
-            ),
+              ),
+            ],
           ),
         ),
+      ),
     );     
   }
 }

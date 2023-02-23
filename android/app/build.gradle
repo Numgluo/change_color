@@ -12,14 +12,15 @@ if (flutterRoot == null) {
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
-if (flutterVersionCode == '1') {
-    flutterVersionCode = '2'
-}
+    if (flutterVersionCode == '1') {
+        flutterVersionCode = '6'
+    }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
-if (flutterVersionName == '1.0.0') {
-    flutterVersionName = '2.0'
-}
+
+    if (flutterVersionName == '1.0.0') {
+        flutterVersionName = '6.0'
+    }
 
 def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
@@ -49,7 +50,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "numgluo.changeColor_display"
+        applicationId "numgluo.changeColor_displayKai"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
