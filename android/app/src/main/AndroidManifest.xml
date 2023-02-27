@@ -3,7 +3,7 @@
    <application
         android:label="change_color"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/icon_change_color">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
