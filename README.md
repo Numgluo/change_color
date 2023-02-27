@@ -11,5 +11,5 @@ if you want other colors, please comment in my GooglePlayStore page.
 
 if you push "SET COLOR" button, you set RGB value by bar or hands.
 
-↓Google play store page↓
+Google play store page
 https://play.google.com/store/apps/details?id=numgluo.changeColor_displayKai&hl=ja
